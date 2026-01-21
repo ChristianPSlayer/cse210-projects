@@ -5,16 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the Exercise2 Project.");
-/*
-        string valueInText = "42";
-        int number = int.Parse(valueInText);
-        Console.WriteLine(number);
 
-        Console.Write("What is your favorite number? ");
-        string userInput = Console.ReadLine();
-        int anyNumber = int.Parse(userInput);
-        Console.WriteLine(anyNumber);
-*/
         Console.WriteLine("What is your grade porcentaje?");
         string answer = Console.ReadLine();
         int score = int.Parse(answer);
