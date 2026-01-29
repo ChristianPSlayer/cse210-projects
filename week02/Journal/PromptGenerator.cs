@@ -17,8 +17,8 @@ public class PromptGenerator
 
     public string GetRamdomPrompt()
     {
-        Random random = new Random();
+        Random random = new Random(); //create object Type random
         int index = random.Next(_prompt.Count);
-        return _prompt[index];
+        return _prompt[index];//return the question 
     }
 }

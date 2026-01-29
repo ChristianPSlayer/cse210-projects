@@ -5,14 +5,14 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {
+    {   //instance the class
         Journal theJournal = new Journal();
         PromptGenerator promptGenerator = new PromptGenerator();
         
         // Variable para controlar el bucle
         bool running = true;
 
-        Console.WriteLine("Bienvenido al Programa de Diario.");
+        Console.WriteLine("Welcome to the Program.");
 
         while (running)
         {
@@ -28,7 +28,7 @@ class Program
 
             if (choice == "1")
             {
-                
+                //ask for a question 
                 string prompt = promptGenerator.GetRamdomPrompt();
                 Console.WriteLine($"\n{prompt}");
                 
@@ -36,15 +36,15 @@ class Program
                 Console.Write("> ");
                 string response = Console.ReadLine();
                 
-                
+                //calculate date
                 string date = DateTime.Now.ToShortDateString();
 
-                
+                //create entry and fill it
                 Entry newEntry = new Entry();
                 newEntry._date = date;
                 newEntry._prompText = prompt;
                 newEntry._entryText = response;
-
+                //save in the file  instance Journal
                 theJournal.AddEntry(newEntry);
             }
             else if (choice == "2")
