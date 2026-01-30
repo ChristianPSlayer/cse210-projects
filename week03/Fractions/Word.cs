@@ -16,6 +16,15 @@ public class Word
     {
         _isHidden = true;
     }
+    public bool IsHidden()
+    {
+        return _isHidden;
+    }
+
+    public void Show()
+    {
+        
+    }
     public string GetDisplayText()
     {
         if (_isHidden)

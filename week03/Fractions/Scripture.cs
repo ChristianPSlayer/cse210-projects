@@ -30,6 +30,21 @@ public class Scripture
 
         wordRandomHide.Hide();
 
+        for (int i = 0; i < numberToHide; i++)
+        {
+           int wordHide = 0;
+            while (_words[wordHide].IsHidden())
+            {
+                foreach (Word word in _words)
+                {
+                    if (!Word.IsHidden())
+                    {
+                        
+                    }
+                }
+            }
+        }
+
 
     }
 
