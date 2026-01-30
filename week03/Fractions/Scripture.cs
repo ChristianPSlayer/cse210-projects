@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 public class Scripture
 {
@@ -22,6 +23,13 @@ public class Scripture
     public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
+        int total = _words.Count;
+        int indexAzar = random.Next(0 , total);
+
+        Word wordRandomHide = _words[indexAzar];
+
+        wordRandomHide.Hide();
+
 
     }
 
