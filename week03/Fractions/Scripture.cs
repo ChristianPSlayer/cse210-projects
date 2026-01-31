@@ -20,7 +20,7 @@ public class Scripture
 
     }
 
-    public void HideRandomWords(int numberToHide)
+    public bool HideRandomWords(int numberToHide)
     {
         Random random = new Random();
         int total = _words.Count;
@@ -37,14 +37,14 @@ public class Scripture
             {
                 foreach (Word word in _words)
                 {
-                    if (!Word.IsHidden())
+                    if (!word.IsHidden() )
                     {
-                        
+                        return false;
                     }
                 }
             }
         }
-
+        return true;
 
     }
 
