@@ -20,34 +20,29 @@ public class Scripture
 
     }
 
-    public bool HideRandomWords(int numberToHide)
+    public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
-        int total = _words.Count;
-        int indexAzar = random.Next(0 , total);
+        List<Word> visibleWords = _words.Where(w => !w.IsHidden()).ToList();
 
-        Word wordRandomHide = _words[indexAzar];
 
-        wordRandomHide.Hide();
+        int count = Math.Min(numberToHide, visibleWords.Count);
 
-        for (int i = 0; i < numberToHide; i++)
-        {
-           int wordHide = 0;
-            while (_words[wordHide].IsHidden())
-            {
-                foreach (Word word in _words)
-                {
-                    if (!word.IsHidden() )
-                    {
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-
+         for (int i = 0; i < count; i++)
+    {
+        int indexAzar = random.Next(visibleWords.Count);
+        visibleWords[indexAzar].Hide();
+        visibleWords.RemoveAt(indexAzar);
     }
-
+}
+                
+            
+    
+ public bool isCompletelyHidden()
+    {
+        return _words.All(w => w.IsHidden());
+    }
+       
     public string GetDisplayText()
     {
         string text = "";
